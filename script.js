@@ -36,20 +36,20 @@ function error_check_values(pin, rin, tin)
         {
             // If value empty... return false
             alert("Please enter a value");
-            element.focus();
+            document.getElementById("principal").focus()
             out*= false;
         }
         else if(Number(element)==NaN)
         {
             // If values cannot be interpreted as numbers, return false
             alert("Please enter a valid number");
-            element.focus();
+            document.getElementById("principal").focus()
             out *= false;
         }
         else if(Number(element) <=0)
         {
             alert("All numbers must be positive");
-            element.focus;
+            document.getElementById("principal").focus()
             out *= false;
         }
         else{
