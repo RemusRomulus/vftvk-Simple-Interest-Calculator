@@ -2,14 +2,14 @@
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>The Amazing Simple Intererst Calculator</title>
+    <title>Web App - Simple Interest Calculator</title>
     </head>
     <body onload="update_apr_label()">
         <fieldset>
             <h1>Simple Interest Calculator</h1>
                 <div id="rate_form">
                     Amount <input type="number"  id="principal">  <br/>
-                    Rate <input type="range"  id="rate" name="rate" step="0.25" min="1.0" max="25.0" value="10.25" onchange="update_apr_label()"> 
+                    Rate <input type="range"  id="rate" name="rate" step="0.25" min="1.0" max="20.0" value="10.25" onchange="update_apr_label()"> 
                     <label id="rate_label">???</label> <br/>
                     <label>No. of Years</label>
                     <select id="years">
