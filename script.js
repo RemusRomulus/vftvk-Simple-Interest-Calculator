@@ -23,6 +23,44 @@ function create_msg(pin, rin, tin, ein)
     return msg;
 }
 
+function error_check_values(pin, rin, tin)
+{
+    // For error checking, since all values are numbers
+    // ... they can be treated equally by looping through
+    // ... each element of an array created from the user
+    // ... values.
+    var error_check = [pin, rin, tin]
+    out = true;
+    error_check.forEach(element => {
+        if (element == "")
+        {
+            // If value empty... return false
+            alert("Please enter a value");
+            element.focus();
+            out*= false;
+        }
+        else if(Number(element)==NaN)
+        {
+            // If values cannot be interpreted as numbers, return false
+            alert("Please enter a valid number");
+            element.focus();
+            out *= false;
+        }
+        else if(Number(element) <=0)
+        {
+            alert("All numbers must be positive");
+            element.focus;
+            out *= false;
+        }
+        else{
+            
+        }
+    });
+
+    console.log(out)
+    return out;
+}
+
 function compute()
 {
     // Main compute function
@@ -31,30 +69,14 @@ function compute()
     var p = document.getElementById("principal").value;
     var r = document.getElementById("rate").value;
     var t = document.getElementById("years").value;
-    // console.log(p, r, t)
 
-    // For error checking, since all values are numbers
-    // ... they can be treated equally by looping through
-    // ... each element of an array created from the user
-    // ... values.
-    var error_check = [p, r, t]
-    error_check.forEach(element => {
-        if (element == "")
-        {
-            // If value empty... return false
-            alert("Please enter a value");
-            element.focus();
-            return false;
-        }
-
-        if(Number(element)==NaN)
-        {
-            // If values cannot be interpreted as numbers, return false
-            alert("Please enter a valid number");
-            element.focus();
-            return false
-        }
-    });
+    // Error check values before performing calculations
+    stat = error_check_values(p, r, t)
+    if(!stat)
+    {
+        document.getElementById("result").innerHTML = "";
+        return false;
+    }
 
    
     var earnings = interest_received(p, r, t);
