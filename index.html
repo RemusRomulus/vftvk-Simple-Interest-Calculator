@@ -2,15 +2,41 @@
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>The Amazing Simple Intererst Calculator</title>
     </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+    <body onload="update_apr_label()">
+        <fieldset>
+            <h1>Simple Interest Calculator</h1>
+                <div id="rate_form">
+                    Amount <input type="number"  id="principal">  <br/>
+                    Rate <input type="range"  id="rate" name="rate" step="0.25" min="1.0" max="25.0" value="10.25" onchange="update_apr_label()"> 
+                    <label id="rate_label">???</label> <br/>
+                    <label>No. of Years</label>
+                    <select id="years">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    
+                    <br/>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+                    <button onclick="compute()">Compute Interest</button><br/><br/>
+                    <span class="normal_span" id="result">
 
-        <button onclick="compute()">Compute</button>
+                    </span>
+                </div>
+            <footer>
+                &copy; This Calculator belongs to Andrew Britton
+            </footer>
+        </fieldset>
     </body>
+
+    
 </html>

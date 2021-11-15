@@ -1,4 +1,30 @@
-body {background-color:tan;}
-h1{color:green;}
+body {background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;}
+h1{color:gray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;}
+fieldset {background-color:rgb(255, 255, 255);
+        color: black;
+          border-radius: 25px;
+        padding: 20px;
+        width: 300px;}
 
+input[type=range]::-webkit-slider-thumb {
+    background-color: slateblue;
+}
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    color: black;
+    width: 300px;
+    padding: 20px;
+    border-radius: 25px;
+    align-self: center;
+}
+
+/* Creating the special coloration for nubmers in the output message*/
+.special{
+    background-color: yellow;
+}
 
